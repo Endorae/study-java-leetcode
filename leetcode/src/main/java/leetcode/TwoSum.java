@@ -1,66 +1,28 @@
 package leetcode;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 public class TwoSum {
 
 	public int[] twoSum(int[] nums, int target)
-    {
-	    int[] result = new int[2];
-	    if(null == nums)
-	    {
-	    	return result;
-	    }
-        //将小于等于 target 的数放入  hashmap ，key = num, value = 数组下标
-	    //循环 hashmap，
-	    
-	    HashMap<Integer,Integer> numsMap = new HashMap<Integer,Integer> (); 
+    {	   
+	    Map<Integer,Integer> numsMap = new HashMap<Integer,Integer> ();
 	    
 	    for (int i = 0; i < nums.length; i++)
 	    {
-	    	int num = nums[i];
-	    	
-	    	if(null != numsMap.get(num))
-	    	{
-	    		if( num + num == target)
-	    		{
-	    			result[0] = numsMap.get(num);
-	    			result[1] = i;
-	    			
-	    			return result;
-	    		}
+	    	int num = nums[i];	    		    		    	
+	    	int expectPairNum = target - num;	    	
+	    		    		    	
+	    	if(numsMap.containsKey(expectPairNum))
+	    	{	    		   			
+    			return new int[] {numsMap.get(expectPairNum),i};	    		
 	    	}
-	    	else
-	    	{
-	    		numsMap.put(num, i);
-	    	}
-	    		    
+	    	numsMap.put(num, i);	    		    		    
 	    }
 	    
-		Iterator<Map.Entry<Integer, Integer>> iterator = numsMap.entrySet().iterator();
-		while (iterator.hasNext()) {
-			Map.Entry<Integer, Integer> entry = iterator.next();
-			
-			int num1 = entry.getKey();
-			
-			int num2 = target - num1;
-			
-			if(null != numsMap.get(num2))
-			{
-				result[0] = entry.getValue();
-				result[1] = numsMap.get(num2);
-				
-				if(result[0] != result[1])
-				{
-					break;
-				}				
-			}	
-			
-		}
 	    
-	    return result;
+	    return new int[2];
     }
 	
 //	 public int[] twoSum(int[] nums, int target)
