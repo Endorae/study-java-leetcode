@@ -15,6 +15,7 @@ class LengthOfLongestSubstringTest {
 	@MethodSource("providerLengthOfLongestSubstringTestCase")	
 	void test(String input,int exceptedResult) {
 		
+		int test = "abcdefgh".indexOf('e', 2);
 		int result = new LengthOfLongestSubstring().lengthOfLongestSubstring(input);
 		assertEquals(exceptedResult,result); 
 	}
@@ -22,16 +23,16 @@ class LengthOfLongestSubstringTest {
 	@SuppressWarnings("unused")
 	private static Stream<Arguments> providerLengthOfLongestSubstringTestCase() {
 	    return Stream.of(
-	    		Arguments.of("ABCDE", 5)
-//	    		Arguments.of("a", 1),
-//	    		Arguments.of("aa", 1),
-//	    		Arguments.of("aA", 2),
-//	    		Arguments.of("AABB", 2),
-//	    		Arguments.of("", 0),
-//	    		Arguments.of("dvdf", 3),
-//	    		Arguments.of("ABCDCEEFADEAB", 4),
-//	    		Arguments.of("abcdefghijkmlnopqrstuvwxyz1234567890!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijkmlnopqrstuvwxyz1234567890!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ", 72)
-//	    		
+	    		Arguments.of("ABCDE", 5),
+	    		Arguments.of("a", 1),
+	    		Arguments.of("aa", 1),
+	    		Arguments.of("aA", 2),
+	    		Arguments.of("AABB", 2),
+	    		Arguments.of("", 0),
+	    		Arguments.of("dvdf", 3),
+	    		Arguments.of("ABCDCEEFADEAB", 4),
+	    		Arguments.of("abcdefghijkmlnopqrstuvwxyz1234567890!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijkmlnopqrstuvwxyz1234567890!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ", 72)
+	    		
 				);	    		
 	}	
 }
