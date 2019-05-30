@@ -32,7 +32,6 @@ class LengthOfLongestSubstringTest {
 	    		Arguments.of("ABCDCEEFADEAB", 4),
 	    		Arguments.of("pwwkew", 3),
 	    		Arguments.of("ckilbkd", 5),
-	    		
 	    		Arguments.of("abcdefghijkmlnopqrstuvwxyz1234567890!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijkmlnopqrstuvwxyz1234567890!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ", 72)
 	    		
 				);	    		
